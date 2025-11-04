@@ -14,16 +14,16 @@ public class NumWords
         int tens = (number % 100) / 10;
         int units = number % 10;
         
-        if (hundreds > 0) {
-            System.out.print(hundreds + " hundreds ");
+        if (hundreds >= 0) {
+            System.out.print(hundreds + " hundreds," + " ");
         }
         
-        if (tens > 0) {
-            System.out.print(tens + " tens ");      
+        if (tens >= 0) {
+            System.out.print(tens + " tens, ");      
         }
         
-        if (units > 0) {
-            System.out.print(units + " units");
+        if (units >= 0) {
+            System.out.print("and" + " " + units + " ones.");
         }
         
         System.out.println(); 
