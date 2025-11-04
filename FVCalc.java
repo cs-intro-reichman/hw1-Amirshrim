@@ -1,18 +1,14 @@
 public class FVCalc {
-	public static void main(String[] args)
-	{
-		int Currentvalue = Integer.parseInt(args[0]);
-		double Rate = Double.parseDouble(args[1]);
-		int Years = Integer.parseInt(args[2]);
-
-		if (Rate >= 0 && Rate <= 100 && Years >= 0 )
-		{			
-		Rate= Rate/100;	
-		double feautreValue = Currentvalue * Math.pow( (1+Rate), Years);
-		System.out.println("The future value is: " + feautreValue);
-		}
-		
-
-
-	}
+    public static void main(String[] args)
+    {
+        int currentValue = Integer.parseInt(args[0]);
+        double rateInput = Double.parseDouble(args[1]); 
+        int years = Integer.parseInt(args[2]);
+        double rateFactor = rateInput / 100.0; 
+        double futureValueCalc = currentValue * Math.pow( (1 + rateFactor), years);
+        int futureValue = (int) Math.round(futureValueCalc);
+        String rateForDisplay = (int)rateInput + ".0"; 
+        System.out.println("After " + years + " years, $" + currentValue + 
+                           " saved at " + rateForDisplay + "% will yield $" + futureValue);
+    }
 }
